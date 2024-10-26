@@ -10,6 +10,9 @@ import connectToMongoDb from "./database/db.js";
 
 const port = process.env.PORT;
 
+import userRouter from "./router/userRouter.js";
+app.use("/cit",userRouter);
+
 const main = async() => {
     try{
         await connectToMongoDb(process.env.MONGODB_CONNECTION_STRING);
