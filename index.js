@@ -13,6 +13,8 @@ const port = process.env.PORT;
 import userRouter from "./router/userRouter.js";
 app.use("/cit",userRouter);
 
+app.use(express.urlencoded({ extended: true }));
+
 const main = async() => {
     try{
         await connectToMongoDb(process.env.MONGODB_CONNECTION_STRING);
